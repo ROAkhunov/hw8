@@ -11,10 +11,9 @@ def read(filename):
 def printing(col):
     for i in range(len(col)):
         print(col[i])
-def write(filename,col):
+def write(filename,str):
     with open (filename,'a') as f:
-        line=",".join(col)
-        f.write(f'{line}'+'\n')
+        f.write(f'{str}')
 def search(filename):
     print('поиск по имени-1, поиск по фамилии-2')
     choise=int(input())
@@ -76,14 +75,13 @@ choise=int(input())
 if choise==1:
     print(read('phon.txt'))
 elif choise==2:
-    print("введите данные в формате:['Фамилия','имя','отчество','номер']")
-    a=list(input().strip().split(','))
-    print(a)
-    print(write(phon.txt,a))
+    print("введите данные в формате:Фамилия,имя,отчество,номер")
+    a=input()
+    print(write('phon.txt',a))
 elif choise==3:
-    print(search(phon.txt))
+    print(search('phon.txt'))
 elif choise==4:
-    print(rewrite(phon.txt))
+    print(rewrite('phon.txt'))
 elif choise==5:
-   print(delete(phon.txt))
-# 1
+   print(delete('phon.txt'))
+# 15
